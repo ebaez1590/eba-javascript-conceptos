@@ -92,7 +92,7 @@ console.log('respuestaForEach', respuestaForEach); // siempre retorna undefined
 
 //CUARTO OPERADOR MAP
 // enviamos como parametro los datos del nuevo arreglo
-// devuelve el nuevo arreglo
+// devuelve el nuevo arreglo modificado
 
 const respuestaMap = arreglo.map(
     function(valorActual, indiceActual, arregloCompleto) {
@@ -142,4 +142,17 @@ const respuestaEvery = arreglo.every(
         return valorActual.nota > 14;
     }
 );
-console.log('respuestaEvery', respuestaEvery)
+console.log('respuestaEvery', respuestaEvery);
+
+
+//OPERADOR REDUCE
+//Recibe como parametro una funcion, y un acumulador
+//Devuelve el valor del acumulador
+//la funcion de parametro debe modificar el acumulador
+const repuestaReduce = arreglo.reduce(
+    function(valorAcumulador, valorActual, arregloCompleto) {
+        return (valorAcumulador + valorActual.nota);
+    },
+    100 //Acumulador
+);
+console.log('respuestaReduce: ', repuestaReduce);
