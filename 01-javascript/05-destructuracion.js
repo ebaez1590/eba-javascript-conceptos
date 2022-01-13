@@ -15,7 +15,7 @@ const estebanJois = { //Creando una nueva referencia
 }
 console.log(estebanJois);
 
-//Destructuracion de arreglos
+//Destructuracion de arreglos: Consiste en juntar 2 arreglos o mas en uno solo
 const arregloUno = [1, 2, 3, 4, 5];
 const arregloDos = [6, 7, 8, 9, 10];
 const superArreglo = [
