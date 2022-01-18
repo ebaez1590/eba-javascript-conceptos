@@ -43,7 +43,7 @@ promesaEsPar(8)
             return promesaElevarAlCuadrado(datosPromesa);
         }
     )
-    .then(
+    .then( //Concatenacion de promesas
         (datosElevarAlCuadrado) => {
             console.log(datosElevarAlCuadrado);
         }
