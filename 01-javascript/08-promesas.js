@@ -23,7 +23,7 @@ function promesaElevarAlCuadrado(numero) {
     const miSegundaPromesa = new Promise(
         (resolve, reject) => {
             const numeroElevadoAlCuadrado = Math.pow(numero, 2);
-            resolve(numeroElevadoAlCuadrado);
+            resolve(numeroElevadoAlCuadrado); // return el numero elevado al cuadrado
         }
     );
     return miSegundaPromesa;
@@ -35,8 +35,9 @@ function promesaElevarAlCuadrado(numero) {
 //.catch() => catch
 //.finally() => finally
 //Dentro de cualquier .then() se puede devolver una promesa.
+//El return y throw no se pueden usar en el mundo async
 promesaEsPar(8)
-    .then( //Aceptan un return de promesas
+    .then( //todo .then Aceptan un return de promesas
         (datosPromesa) => {
             console.log(datosPromesa);
             return promesaElevarAlCuadrado(datosPromesa);
