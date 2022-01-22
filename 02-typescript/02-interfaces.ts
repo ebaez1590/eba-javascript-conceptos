@@ -2,6 +2,7 @@
 //interface es un tipo de dato
 //Las interfaces al transpilar no ocupan espacio en el archivo .js
 //Esta es la ventaja de las interfaces para tipar los datos
+//Es una buena practiva tipar todos los datos
 interface Usuario {
     nombre: string;
     apellido: string;
