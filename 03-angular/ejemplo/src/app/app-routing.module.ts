@@ -7,6 +7,7 @@ import { RutaNotFoundComponent } from './rutas/ruta-not-found/ruta-not-found.com
 import { RutaAppComponent } from './rutas/ruta-app/ruta-app.component';
 import { RutaUsuarioComponent } from './rutas/ruta-usuario/ruta-usuario.component';
 import { RutaPostComponent } from './rutas/ruta-post/ruta-post.component';
+import { EstaLogueadoGuard } from './servicios/auth/esta-logueado.guard';
 
 //Esquema de rutas del proyecto
 // login
@@ -24,6 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
+    canActivate: [ EstaLogueadoGuard ],//Porpiedad para habilitar la ruta a traves del uso de Guards
     component: RutaInicioComponent
   },
   {
