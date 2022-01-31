@@ -1,6 +1,11 @@
+<!--Cada etiqueta de un componente es una nueva instancia del mismo-->
 <app-banner-imagenes>
 </app-banner-imagenes>
 <p>ruta-login works!</p>
-<!--Cada etiqueta de un componente es una nueva instancia del mismo-->
-<app-banner-imagenes>
+<!--Directiva: NG IF -> IF-->
+<button (click)="cambiarOcultarBanner()">
+<!-- (condicion) ? verdadero : falso -->
+{{ (mostrarSegundoBanner)? 'Ocultar' : 'Mostrar'}}    
+</button>
+<app-banner-imagenes *ngIf="mostrarSegundoBanner">
 </app-banner-imagenes>

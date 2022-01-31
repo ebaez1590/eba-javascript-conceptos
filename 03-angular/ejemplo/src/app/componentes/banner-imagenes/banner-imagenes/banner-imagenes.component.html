@@ -1,1 +1,20 @@
 <h1>Hola desde Banner Imagenes</h1>
+<!--Interpolacion {{}} -> TEXTO MUESTRA INTERFAZ (View Model)-->
+<h2>{{nombre}} - {{apellido}}</h2>
+<p>Mascota: {{mascotas.akamaru.edad}}</p>
+
+<!--Property Binding []-->
+<img [src]="urlImagen" alt="">
+<a [href]="url" target="_blank">
+Mas informacion
+</a>
+<!--Event Binding ()-->
+<button (click)="ejecutarEventoClick()" (blur)="ejecutarEventoBlur()">
+Event Binding</button>
+
+<!--Pipes |-->
+<!--Un pipe recibe algo y lo transforma-->
+<p>{{fecha | date:'dd-MM-YYYY'}}</p>
+<p>{{sueldo | currency}}</p>
+<!--Etiqueta preformateada-->
+<pre>{{mascotas | json}}</pre>
