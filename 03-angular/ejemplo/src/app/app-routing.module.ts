@@ -8,6 +8,7 @@ import { RutaAppComponent } from './rutas/ruta-app/ruta-app.component';
 import { RutaUsuarioComponent } from './rutas/ruta-usuario/ruta-usuario.component';
 import { RutaPostComponent } from './rutas/ruta-post/ruta-post.component';
 import { EstaLogueadoGuard } from './servicios/auth/esta-logueado.guard';
+import { EsAdministradorGuard } from './servicios/auth/es-administrador.guard';
 
 //Esquema de rutas del proyecto
 // login
@@ -28,6 +29,12 @@ const routes: Routes = [
     canActivate: [ EstaLogueadoGuard ],//Porpiedad para habilitar la ruta a traves del uso de Guards
     component: RutaInicioComponent
   },
+  //Carga de un modulo de manera lazy (no se carga al inicio de la aplicacion)
+  {
+    path: 'lazy-inventario',
+    loadChildren: () => import('./modulos/modulo-inventario/modulo-inventario.module')
+    .then(m => m.ModuloInventarioModule)
+  },
   {
     path: 'app',
     component: RutaAppComponent,
@@ -40,7 +47,8 @@ const routes: Routes = [
       },
       {
         path: 'post',
-        component: RutaPostComponent
+        component: RutaPostComponent,
+        canActivate: [ EsAdministradorGuard ]
       }
     ]
   },
