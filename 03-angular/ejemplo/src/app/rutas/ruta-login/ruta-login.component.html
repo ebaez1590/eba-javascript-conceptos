@@ -1,8 +1,32 @@
-<!--Cada etiqueta de un componente es una nueva instancia del mismo-->
-<app-banner-imagenes>
-</app-banner-imagenes>
-<p>ruta-login works!</p>
-<!--Directiva: NG IF -> IF-->
+<!--DIRECTIVA NG FOR -> let variable of array; let i = index-->
+<h1>NG FOR</h1>
+<div *ngFor="let usuario of arregloUsuarios; let i = index">
+    <!--p>{{i}} - {{usuario.id}} - {{usuario.nombre}}</p-->
+    <!--Cada etiqueta de un componente es una nueva instancia del mismo-->
+    <app-banner-imagenes [color]="usuario.color" [url]="usuario.link" [urlImagen]="usuario.linkImagen">
+    </app-banner-imagenes>
+</div>
+<h1>NG FOR en table</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Indices</th>
+            <th>ID</th>
+            <th>usuario</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of arregloUsuarios; let i=index">
+            <td>{{i}}</td>
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.nombre}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<h1>NG IF</h1>
 <button (click)="cambiarOcultarBanner()">
 <!-- (condicion) ? verdadero : falso -->
 {{ (mostrarSegundoBanner)? 'Ocultar' : 'Mostrar'}}    
